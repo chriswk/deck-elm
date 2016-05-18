@@ -223,12 +223,18 @@ cards deck =
         div [] cards
 
 
+shuffleButton : Html Msg
+shuffleButton =
+    div [ class "startshuffling" ]
+        [ button [ onClick ShuffleDeck ] [ text "Shuffle" ]
+        ]
+
+
 view : Model -> Html Msg
 view model =
     div []
         [ (cards model.deck)
-        , div [ class "startshuffling" ]
-            [ button [ onClick ShuffleDeck ] [ text "Shuffle!" ] ]
+        , shuffleButton
         ]
 
 
